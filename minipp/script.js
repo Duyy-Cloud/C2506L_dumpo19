@@ -113,7 +113,7 @@ function renderEventsList() {
     });
 }
 
-//  edit an event // 
+
 function editEvent(eventId) {
     const event = events.find(e => e.id === eventId);
     document.getElementById("eventName").value = event.name;
@@ -128,7 +128,7 @@ function editEvent(eventId) {
     saveBtn.onclick = () => updateEvent(eventId);
 }
 
-// update event // 
+
 function updateEvent(eventId) {
     const event = events.find(e => e.id === eventId);
     event.name = document.getElementById("eventName").value;
@@ -150,7 +150,7 @@ function showDeleteModal(eventId) {
     document.getElementById("confirmDelete").onclick = () => deleteEvent(eventId);
     document.getElementById("cancelDelete").onclick = () => modal.style.display = "none";
 }
-// Del evetn btn // 
+
 function deleteEvent(eventId) {
     const eventIndex = events.findIndex(e => e.id === eventId);
     events.splice(eventIndex, 1);
@@ -158,13 +158,13 @@ function deleteEvent(eventId) {
     document.getElementById("deleteModal").style.display = "none";
 }
 
-// Book ticket // 
+
 function bookTicket(eventId) {
     const event = events.find(e => e.id === eventId);
     alert(`Booking ticket for ${event.name} at $${event.price}`);
 }
 
-// Save event button // 
+
 const saveEventBtn = document.getElementById("saveEventBtn");
 saveEventBtn.addEventListener("click", () => {
     const eventName = document.getElementById("eventName").value;
